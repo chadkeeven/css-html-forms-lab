@@ -3,6 +3,7 @@
 <head>
 	<title>CSS HTML Forms Lab</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre:400, 700" rel="stylesheet">
 </head>
 <body>
 	<section id="main">
@@ -99,20 +100,56 @@
 		var main = $('#main');
 		function makeResults() {
 
+			/*
+			 to-do
+			 1)reset section if one is already present
+			 to prevent multiple "True Stories"
+			 2)if localstorage value is null return a default
+			 3)templer strings
+			 4)condional for sentimental2 checkboxes
+			 5)condiontional for seniment-1 radio
+			 6)style name value to be capilitized
+			 7)css styles
+			*/ 
+
+
+		    localStorage.setItem("name", $("#name").val());  //name
+		    localStorage.setItem("verb", $("#verb-1").val()); //verb
+		    localStorage.setItem("mission", $("#mission").val()); //mission
+		    localStorage.setItem("sentiment-1", $("#radio2").val()); //sentiment-1
+		    localStorage.setItem("noun-1", $("#noun-1").val()); //noun-
+		    var sentimentChecks = [$("#check1").val(),  " " + $("#check2").val(),  " " + $("#check3").val()];
+		    localStorage.setItem("sentiment-2", JSON.stringify(sentimentChecks));//sentiment-2	
+		    localStorage.setItem("noun-2", $("#noun-2").val()); // noun-2
+
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
+			var results = $('.results');
+			$("<p>Once upon a time there was a Developer named " + localStorage.getItem('name') + ".</p>").appendTo(results);
+			$("<p>" + localStorage.getItem('name') + " came to General Assembly to " + localStorage.getItem('verb') + " the great mountain of programming knowledge.</p>").appendTo(results);
+			$("<p>" + "''" + localStorage.getItem('mission') + "'' , " + localStorage.getItem('name') + " shouted.</p>").appendTo(results);
+			$("<p>Though " + localStorage.getItem('sentiment-1') + ", " + localStorage.getItem('name') + " was able to overcome all obstacles with the power of their " + localStorage.getItem('noun-1') + ".<p>").appendTo(results);
+			$("<p>In the end, their success can be contributed entirely to their " + JSON.parse(localStorage.getItem('sentiment-2')) + " " + localStorage.getItem('noun-2') + ".</p>").appendTo(results);
+
 
 			// JS Native:
-			// var results = document.createElement('section');
-			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
-			// results.className = 'container results';
-			// main.appendChild(results);
-		};
+			//var results = document.createElement('section');
+			//results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
+			//results.className = 'container results';
+			//main.appendChild(results);
+		}
 
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
+		    event.preventDefault();
 
-	    	// Run the 'makeResults' function seen above
+
+		    //localStorage.clear();
+		    makeResults();
+
+	    	// Run the 'makeResults' function seen 
+
+
 
 	    	/*
 			

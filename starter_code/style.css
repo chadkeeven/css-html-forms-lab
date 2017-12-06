@@ -1,6 +1,7 @@
 /*-------- Utility Styles --------*/
 * {
 	box-sizing: border-box; 
+	font-family: 'Proza Libre', sans-serif;
 	/* ^^^ Forces all elements to include content, padding, and border as part of their width/height calculation: 
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
 }
@@ -12,7 +13,33 @@
 */
 
 /*-------- Main Styles --------*/
+#main {
+	width: 100%;
+}
 
+.container {
+	float: left;
+	border-radius: 5px;
+}
+
+h1 {
+	font-size: 44px;
+	font-weight: 700;
+	margin: 5%;
+}
+input {
+	border-radius: 5px;
+}
+
+form {
+	border-radius: 5px;
+	background-color: #E3E6EC;
+	text-align: center;
+}
+
+button {
+	border-radius: 5px;
+}
 /* 
 	Make the main container the full width of the page.
 
@@ -57,7 +84,12 @@
 
 
 /*-------- Results Styles --------*/
-
+.results {
+	width: fill;
+	max-width: 500px;
+	background-color: #C8DBB3;
+	padding: 20px;
+}
 
 /* 
 
