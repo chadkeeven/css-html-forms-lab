@@ -29,14 +29,19 @@ h1 {
 }
 input {
 	border-radius: 5px;
+	min-height: 48px;
+	border: 1px #CCC;
 }
 
 form {
 	border-radius: 5px;
-	background-color: #E3E6EC;
 	text-align: center;
 	max-width: 500px;
 	padding: 2%;
+}
+
+.formSection {
+	background-color: #E3E6EC;
 }
 .formGroup {
 	padding: 2%;
@@ -44,6 +49,17 @@ form {
 
 button {
 	border-radius: 5px;
+}
+
+#submitButton {
+	float: right;
+	font-weight: 800;
+	width: auto;
+	color: rgba(39, 208, 127, .50);
+}
+
+#submitButton:hover {
+	color: rgba(39, 208, 127, 1);
 }
 /* 
 	Make the main container the full width of the page.
